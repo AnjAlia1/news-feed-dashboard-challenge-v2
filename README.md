@@ -1,1 +1,1 @@
-Starting work on project
+Creating data.js file for data
