@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import datas from "./datas.js";
+import data from "./datas.js";
 import './App.css';
 import { useEffect, useState } from "react";
 
@@ -12,7 +12,7 @@ function Newscontainer () {
     console.log(e.target)
   };
   return (
-    datas.map((data) => {
+    data.map((data) => {
       return (
         <div className="news-box" >
           <h3>{data.author}</h3>
