@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import data from "./datas.js";
+import data from "./data.js";
 import './App.css';
 import { useEffect, useState } from "react";
 
