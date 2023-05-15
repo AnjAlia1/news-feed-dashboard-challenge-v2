@@ -2,9 +2,12 @@
   text-align: center;
 }
 .news-box{
-  border:3px solid blue;
+  border:3px solid gray;
   width:220px;
   height: auto;
+}
+.news-img{
+  width:120px;
 }
 .App-logo {
   height: 40vmin;
