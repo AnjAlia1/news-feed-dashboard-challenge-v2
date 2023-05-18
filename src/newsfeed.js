@@ -23,23 +23,24 @@ export const Post = () => {
           })
       }, [])
 
-    return (
-        result.data.map((data) => {
-            return (
-                <div >
+    return(
+      result.data.map((data) =>{
+            return( 
+            <div >
+              <div><h6>{data.author}</h6>
+              <img src={data.imageUrl} className="news-img"></img> 
                     <div className="news-box">
-                    <div><h6>{data.author}</h6>
                             <p value={data.id}>{isReadMore ? data.content.slice(0, 120) : data.content}
                                 <span key={data.id} value={data.id} onClick={(e) => toggleReadMore(e)}>{isReadMore ? '..Readmore' : 'showless'}</span>
                             </p>
                             <span>{data.time}</span>
                         </div>
-                        <img src={data.imageUrl} className="news-img"></img>
-                        
+                         
                     </div>
                 </div>
             )
-        })
+        })  
     )
-}
+    
+    }
 

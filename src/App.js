@@ -9,7 +9,7 @@ function App() {
   return (
       <div className='content-container' >
         <Post />
-    
+       <h1>Hi Coders</h1>
       </div>
   )
 }

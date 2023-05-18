@@ -1,25 +1,34 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,800;1,200;1,900&display=swap');
+
 .App {
   text-align: center;
 }
 .news-box{
-  width:250px;
+  width:420px;
   height: auto;
   display: flex;
-  border:2px solid green;
+  background-color: rgba(0, 0, 0, 0.368);
   flex-direction:row;
+  color:white;
+  /* margin-left: 20px; */
+  border: 2px solid yellow;
+  border-radius: 3%;
 }
 .content-container{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border: 2px solid red;
-  gap:30px
+  gap:30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  
 }
 p{
   font-size: small;
 }
 .news-img{
-  width:110px;
+  width:400px;
   height: 180px;
 }
 .App-logo {
