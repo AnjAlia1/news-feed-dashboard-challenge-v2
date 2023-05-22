@@ -65,20 +65,16 @@ export const Post = () => {
 
   return result.data.map((val) => {
     return (
-      <div>
-        <div>
-          <h6>{val.author}</h6>
+      <div className="news-div">
+        <div >
+          <h6 className="author-name">{val.author}</h6>
           <img src={val.imageUrl} className="news-img"></img>
           <div className="news-box">
             <p value={val.id}>
               {isReadMore ? val.content.slice(0, 120) : val.content}
-              <span
-                key={val.id}
-                value={val.id}
-                onClick={(e) => console.log("")}
-              >
+              <a key={val.id} value={val.id} href="{val.readMoreUrl}" target="_blank" >
                 {isReadMore ? "..Readmore" : "showless"}
-              </span>
+              </a>
             </p>
             <span>{val.time}</span>
           </div>
