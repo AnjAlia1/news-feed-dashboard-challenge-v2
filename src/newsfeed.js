@@ -68,7 +68,7 @@ export const Post = () => {
     return (
       <div className="news-div">
         <div >
-          <h6 className="author-name">{val.author}</h6>
+          <h6 className="author-name">{val.title}</h6>
           <img src={val.imageUrl} className="news-img"></img>
           <div className="news-box">
             <p value={val.id}>
