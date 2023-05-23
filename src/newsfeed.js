@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './App.css';
 
 export const Post = () => {
   const [isReadMore, setisReadMore] = useState(true);
@@ -72,7 +73,7 @@ export const Post = () => {
           <div className="news-box">
             <p value={val.id}>
               {isReadMore ? val.content.slice(0, 120) : val.content}
-              <a key={val.id} value={val.id} href="{val.readMoreUrl}" target="_blank" >
+              <a key={val.id} value={val.id} href={val.readMoreUrl} target="*" >
                 {isReadMore ? "..Readmore" : "showless"}
               </a>
             </p>

@@ -9,9 +9,11 @@ import {Search} from './searchfunctionality';
 
 function App() {
   return (
-      <div className='content-container' >
+      <div >
         <Search/>
-        <Post />
+        <div className="content-container">
+        <Post/>
+        </div>
       </div>
   )
 }

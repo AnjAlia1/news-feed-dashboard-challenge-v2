@@ -1,8 +1,9 @@
+import { FaSearch } from 'react-icons/fa'
 export const Search = ()=>{
     return(
-    <div>Serach Bar
-        <div>Search Results
-        </div>
+    <div className='search-input'>
+        <FaSearch className="Search-Bar"></FaSearch>
+      <input className="input-for-search" type="search"/>
     </div>
     )
 
