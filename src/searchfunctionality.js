@@ -6,20 +6,28 @@ export const Search = ()=>{
   const [result, setResult] = useState([]);
   const Apicall =(input)=>{
     const apiData = fetch("https://inshorts.deta.dev/news?category=science").then((res)=>res.json()).then((json)=>{
-    const api = (json.data.filter(task => task.title.toLowerCase().includes(input)));
-    console.log("api",api);
-   
+    const data = (json.data.filter(task => task.title.toLowerCase().includes(input)));
+    
+   setResult(data);
+     
   })
 }
   
   const HandleChange =(input)=>{
-       setInput(input)
-       Apicall(input)
+       setInput(input);
+       SearchResult(input)
+       console.log("data",data)
+        Apicall()
+        console.log("datFa",data)
+      console.log("INPUT",input);
+     console.log("result",result);
+       
      }
-   const SearchResult =(input)=>{
+   const SearchResult =()=>{
     // setResult(input);
+
       return(
-        <div>{result}</div>
+        <div>{input}</div>
       )
     }
     
