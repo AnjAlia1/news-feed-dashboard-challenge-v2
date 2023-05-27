@@ -17,7 +17,12 @@
   margin-bottom: 1px;
   width:500px;
 }
-
+.search-result{
+  width:50%;
+  margin: auto;
+  max-height: 100px;
+  overflow-y: scroll;
+}
 .content-container{
 display: flex;
 flex-direction: row;
