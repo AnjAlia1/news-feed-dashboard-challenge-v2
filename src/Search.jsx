@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { CATEGORIES } from "./constants";
 
-const Search = ({ setPosts }) => {
+const Search = ({ setPosts, setIsFetching }) => {
   const [input, setInput] = useState("");
 
   const fetchData = async () => {
     try {
+      setIsFetching(true);
       const response = await fetch(
         "https://inshorts.deta.dev/news?category=all"
       );
@@ -20,6 +21,8 @@ const Search = ({ setPosts }) => {
       setPosts(filteredPosts);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsFetching(false);
     }
   };
 

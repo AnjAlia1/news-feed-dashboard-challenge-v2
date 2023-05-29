@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { CATEGORIES } from "./constants";
 
-const TopStories = ({ setPosts }) => {
+const TopStories = ({ setPosts, setIsFetching }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const fetchSelectedCategoryData = async () => {
     try {
+      setIsFetching(true);
       const response = await fetch(
         `https://inshorts.deta.dev/news?category=${selectedCategory}`
       );
@@ -16,6 +17,8 @@ const TopStories = ({ setPosts }) => {
       setPosts(data);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsFetching(false);
     }
   };
 
