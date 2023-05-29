@@ -28,23 +28,21 @@ const Search = ({ setPosts }) => {
   }, []);
 
   return (
-    <>
-      <div className="search-input">
-        <FaSearch className="Search-Bar"></FaSearch>
-        <input
-          className="input-for-search"
-          value={input}
-          onChange={(e) => setInput(e.target.value.toLowerCase())}
-        ></input>
-        <button
-          onClick={() => {
-            fetchData();
-          }}
-        >
-          Search
-        </button>
-      </div>
-    </>
+    <div className="search-input">
+      <input
+        className="text-input"
+        value={input}
+        onChange={(e) => setInput(e.target.value.toLowerCase())}
+      ></input>
+      <button
+        className="button"
+        onClick={() => {
+          fetchData();
+        }}
+      >
+        Search
+      </button>
+    </div>
   );
 };
 

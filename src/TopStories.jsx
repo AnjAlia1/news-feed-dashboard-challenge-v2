@@ -38,10 +38,11 @@ const TopStories = ({ setPosts }) => {
 
   return (
     <div>
-      <h1>Top Stories for you</h1>
+      <h1 className="top-stories-header">Top Stories for you</h1>
       {CATEGORIES.map((category) => {
         return (
           <button
+            className="categories-button"
             key={category.value}
             disabled={selectedCategory === category.value}
             onClick={() => {
