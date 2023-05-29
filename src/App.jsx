@@ -3,6 +3,7 @@ import Posts from "./Posts";
 import Search from "./Search";
 import "./App.css";
 import TopStories from "./TopStories";
+import Followings from "./Followings";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -12,6 +13,7 @@ const App = () => {
       <Search setPosts={setPosts} />
       <TopStories setPosts={setPosts} />
       <Posts posts={posts} />
+      <Followings />
     </div>
   );
 };
