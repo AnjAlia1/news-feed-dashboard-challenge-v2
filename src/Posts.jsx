@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
-import './App.css';
+import "./App.css";
 
 const Posts = ({ posts }) => {
   const [isReadMore, setisReadMore] = useState(true);
 
   return posts.map((val) => (
     <div className="news-div">
-      <div >
-        <h6 className="author-name">{val.title}</h6>
+      <div>
+        <h2 className="author-name">{val.author}</h2>
+        <h6 className="author-title">{val.title}</h6>
         <img src={val.imageUrl} className="news-img"></img>
         <div className="news-box">
           <p value={val.id}>
             {isReadMore ? val.content.slice(0, 120) : val.content}
-            <a key={val.id} value={val.id} href={val.readMoreUrl} target="*" >
+            <a key={val.id} value={val.id} href={val.readMoreUrl} target="*">
               {isReadMore ? "..Readmore" : "showless"}
             </a>
           </p>
@@ -24,5 +25,3 @@ const Posts = ({ posts }) => {
 };
 
 export default Posts;
-
-
