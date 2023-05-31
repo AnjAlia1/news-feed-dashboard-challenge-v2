@@ -1,10 +1,21 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,800;1,200;1,900&display=swap');
 
-*{
+* {
   box-sizing: border-box;
   margin: 20px;
   background-color: rgb(217, 218, 223);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.hero-section {
+  background-color: yellow;
+  display: flex;
+  flex-direction: row;
 }
 
 .main-header {
@@ -24,7 +35,7 @@
   }
 }
 
-.news-box{
+/* .news-box{
   width:400px;
   height: auto;
   display: flex;
@@ -32,32 +43,66 @@
   flex-direction:row;
   color:white;
   border-radius: 3%;
+} */
+.page {
+  display: flex;
+  background-color: aqua;
 }
-.news-div{
+
+.news-div {
+  border: 1px solid green;
   margin-bottom: 1px;
-  width:500px;
+  width: 60vh;
 }
-.search-result{
-  width:100%;
+
+.left-section {
+  width: 20%;
+  border: 2px solid blue;
+  height: 100vh;
+  display: flex;
+}
+
+.right-section {
+  width: 20%;
+  border: 2px solid blue;
+  height: 100vh;
+}
+
+.posts-section {
+  border: 3px solid hotpink;
+  /* column-width: 2; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 39%;
+  width: 200px;
+  border: 2px solid green;
+}
+
+.search-result {
+  width: 100%;
   margin: auto;
   overflow-y: scroll;
 }
-.content-container{
-display: flex;
-flex-direction: row;
+
+/* .content-container {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap:5px;
-  font-family:roboto;
+  gap: 5px;
+  font-family: roboto;
   font-weight: 200;
-}
-.search-input{
+} */
+
+/* .search-input {
   margin: 0 0 0 200px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 
-  .text-input {
+/* .text-input {
     background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
     background-size: 25px;
     background-color: white;
@@ -66,21 +111,22 @@ flex-direction: row;
     border-radius: 15px;
     border-style: none;
     box-shadow: 0px 0px 3px gray;
-  }
+  } */
 
-  .button {
-    background-color: #0096FF;
-    color: white;
-    width: 100px;
-    height: 40px;
-    border-radius: 50px;
-    border-style: none;
-    box-shadow: 0px 0px 3px gray;
-    margin-left: 10px;
-  }
+.button {
+  background-color: #0096FF;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 50px;
+  border-style: none;
+  box-shadow: 0px 0px 3px gray;
+  margin-left: 10px;
 }
 
-.author-name{
+/* } */
+
+.author-name {
   font-size: large;
   margin-bottom: 1px;
   font-weight: 200;
@@ -96,7 +142,7 @@ flex-direction: row;
   margin-left: 20px;
 }
 
-.categories-button {
+/* .categories-button {
   background-color: white;
   color: black;
   width: 100px;
@@ -105,7 +151,7 @@ flex-direction: row;
   border-style: none;
   box-shadow: 0px 0px 3px gray;
   margin-left: 10px;
-}
+} */
 
 .loader {
   width: 120px;
@@ -114,18 +160,20 @@ flex-direction: row;
   margin-top: 100px;
 }
 
-p{
+p {
   font-size: small;
 }
-.news-img{
-  width:400px;
-  height: 320px;
+
+.news-img {
+  width: 20vh;
+  max-height: 20vh;
 }
 
-.active{
+.active {
   background-color: #0096FF;
   color: white;
 }
+
 /* .followers-list{
   display: flex;
   flex-direction: row;
@@ -137,13 +185,12 @@ p{
   width:30%;
   background-color: skyblue;
 } */
-.followers-div{
+.followers-div {
   height: auto;
   display: flex;
   background-color: black;
-  flex-direction:row;
-  color:white;
+  flex-direction: row;
+  color: white;
   border: 1px solid blue;
   border-radius: 3%;
 }
-

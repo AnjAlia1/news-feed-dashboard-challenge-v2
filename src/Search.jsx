@@ -4,6 +4,7 @@ import { CATEGORIES } from "./constants";
 
 const Search = ({ setPosts, setIsFetching }) => {
   const [input, setInput] = useState("");
+  const [search, setSearch] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -31,21 +32,26 @@ const Search = ({ setPosts, setIsFetching }) => {
   }, []);
 
   return (
-    <div className="search-input">
-      <input
-        className="text-input"
-        value={input}
-        onChange={(e) => setInput(e.target.value.toLowerCase())}
-      ></input>
-      <button
-        className="button"
-        onClick={() => {
-          fetchData();
-        }}
-      >
-        Search
-      </button>
-    </div>
+    <>
+      <div className="search-input">
+        <input
+          className="text-input"
+          value={input}
+          onChange={(e) => setInput(e.target.value.toLowerCase())}
+        ></input>
+        <button
+          className="button"
+          onClick={() => {
+            fetchData();
+          }}
+        >
+          Search
+        </button>
+      </div>
+      <div >
+        <h1>Search Results</h1>
+      </div>
+    </>
   );
 };
 
