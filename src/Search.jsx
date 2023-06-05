@@ -9,8 +9,14 @@ const Search = ({ setPosts, setIsFetching }) => {
   const fetchData = async () => {
     try {
       setIsFetching(true);
+
       const response = await fetch(
-        "https://inshorts.deta.dev/news?category=all"
+
+        "https://inshorts.deta.dev/news?category=all", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        }
+      }
       );
       if (!response.ok) {
         throw new Error("Failed to fetch data");
@@ -47,9 +53,6 @@ const Search = ({ setPosts, setIsFetching }) => {
         >
           Search
         </button>
-      </div>
-      <div >
-        <h1>Search Results</h1>
       </div>
     </>
   );
