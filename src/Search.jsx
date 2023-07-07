@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { CATEGORIES } from "./constants";
+import Fetchpost from "./App.jsx"
 
-const Search = ({ setPosts, setIsFetching }) => {
+const Search = ({ posts, setPosts, setIsFetching }) => {
   const [input, setInput] = useState("");
   const [search, setSearch] = useState([]);
 
@@ -10,22 +11,22 @@ const Search = ({ setPosts, setIsFetching }) => {
     try {
       setIsFetching(true);
 
-      const response = await fetch(
-
-        "https://inshorts.deta.dev/news?category=all", {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        }
+      // const response = await fetch('https://inshorts.me/news/all?offset=0&limit=10');
+      //   // const apidata = await response.json();
+      //   if (!response.ok) {
+      //     throw new Error("Failed to fetch data");
+      //   }
+      //   const { data } = await response.json();
+      console.log("daa", posts)
+      const filteredPosts = posts?.articles?.filter((data) => {
+        //  console.log("tot",data.title,data.title.toLowerCase().includes(input))
+        return data.title.toLowerCase().includes(input)
       }
-      );
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const { data } = await response.json();
-      const filteredPosts = data.filter(({ title }) =>
-        title.toLowerCase().includes(input)
-      );
+      )
+      console.log("filteredpost", filteredPosts);
       setPosts(filteredPosts);
+
+
     } catch (error) {
       console.error(error);
     } finally {
@@ -33,9 +34,6 @@ const Search = ({ setPosts, setIsFetching }) => {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   return (
     <>
@@ -47,9 +45,7 @@ const Search = ({ setPosts, setIsFetching }) => {
         ></input>
         <button
           className="button"
-          onClick={() => {
-            fetchData();
-          }}
+          onClick={() => fetchData()}
         >
           Search
         </button>
@@ -59,3 +55,5 @@ const Search = ({ setPosts, setIsFetching }) => {
 };
 
 export default Search;
+
+

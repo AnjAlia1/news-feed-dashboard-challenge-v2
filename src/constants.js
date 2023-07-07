@@ -48,3 +48,12 @@ export const CATEGORIES = [
     value: "automobile",
   },
 ];
+
+// categoryNames":["politics"]
+
+// categoryNames":["science","technology"]
+// categoryNames":["sports"]
+// categoryNames":["national"]
+// categoryNames":["science"]
+// categoryNames":["politics","national"]
+// categoryNames":["entertainment"]

@@ -8,7 +8,8 @@ const TopStories = ({ setPosts, setIsFetching }) => {
     try {
       setIsFetching(true);
       const response = await fetch(
-        `https://inshorts.deta.dev/news?category=${selectedCategory}`
+        'https://inshorts.me/news/all'
+        // `https://inshorts.deta.dev/news?category=${selectedCategory}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch data");
@@ -39,25 +40,25 @@ const TopStories = ({ setPosts, setIsFetching }) => {
     fetchSelectedCategoryData();
   }, [selectedCategory]);
 
-  return (
-    <div>
-      <h1 className="top-stories-header">Top Stories for you</h1>
-      {CATEGORIES.map((category) => {
-        return (
-          <button
-            className="categories-button"
-            key={category.value}
-            disabled={selectedCategory === category.value}
-            onClick={() => {
-              setSelectedCategory(category.value);
-            }}
-          >
-            {category.name}
-          </button>
-        );
-      })}
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <h1 className="top-stories-header">Top Stories for you</h1>
+  //     {CATEGORIES.map((category) => {
+  //       return (
+  //         <button
+  //           className="categories-button"
+  //           key={category.value}
+  //           disabled={selectedCategory === category.value}
+  //           onClick={() => {
+  //             setSelectedCategory(category.value);
+  //           }}
+  //         >
+  //           {category.name}
+  //         </button>
+  //       );
+  //     })}
+  //   </div>
+  // );
 };
 
 export default TopStories;
