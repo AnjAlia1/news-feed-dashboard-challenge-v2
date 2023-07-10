@@ -11,16 +11,11 @@ const Search = ({ posts, setPosts, setIsFetching }) => {
     try {
       setIsFetching(true);
 
-      // const response = await fetch('https://inshorts.me/news/all?offset=0&limit=10');
-      //   // const apidata = await response.json();
-      //   if (!response.ok) {
-      //     throw new Error("Failed to fetch data");
-      //   }
-      //   const { data } = await response.json();
-      console.log("daa", posts)
-      const filteredPosts = posts?.articles?.filter((data) => {
-        //  console.log("tot",data.title,data.title.toLowerCase().includes(input))
+
+      const filteredPosts = posts?.filter((data) => {
+        // console.log("tot", data.title, data.title.toLowerCase().includes(input))
         return data.title.toLowerCase().includes(input)
+
       }
       )
       console.log("filteredpost", filteredPosts);
@@ -55,5 +50,13 @@ const Search = ({ posts, setPosts, setIsFetching }) => {
 };
 
 export default Search;
+
+
+// const response = await fetch('https://inshorts.me/news/all?offset=0&limit=10');
+      //   // const apidata = await response.json();
+      //   if (!response.ok) {
+      //     throw new Error("Failed to fetch data");
+      //   }
+      //   const { data } = await response.json();
 
 
