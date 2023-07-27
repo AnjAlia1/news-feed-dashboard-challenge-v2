@@ -7,18 +7,16 @@ const Search = ({ posts, setPosts, setIsFetching }) => {
   const [input, setInput] = useState("");
   const [search, setSearch] = useState([]);
 
+
   const fetchData = async () => {
     try {
       setIsFetching(true);
-
-
       const filteredPosts = posts?.filter((data) => {
         // console.log("tot", data.title, data.title.toLowerCase().includes(input))
         return data.title.toLowerCase().includes(input)
-
       }
       )
-      console.log("filteredpost", filteredPosts);
+      // console.log("filteredpost", filteredPosts);
       setPosts(filteredPosts);
 
 

@@ -7,18 +7,18 @@ export const CATEGORIES = [
     name: "National",
     value: "national",
   },
-  {
-    name: "Business",
-    value: "business",
-  },
+  // {
+  //   name: "Business",
+  //   value: "business",
+  // },
   {
     name: "Sports",
     value: "sports",
   },
-  {
-    name: "World",
-    value: "world",
-  },
+  // {
+  //   name: "World",
+  //   value: "world",
+  // },
   {
     name: "Politics",
     value: "politics",
@@ -27,26 +27,26 @@ export const CATEGORIES = [
     name: "Technology",
     value: "technology",
   },
-  {
-    name: "Startup",
-    value: "startup",
-  },
+  // {
+  //   name: "Startup",
+  //   value: "startup",
+  // },
   {
     name: "Entertainment",
     value: "entertainment",
   },
-  {
-    name: "Miscellaneous",
-    value: "miscellaneous",
-  },
+  // {
+  //   name: "Miscellaneous",
+  //   value: "miscellaneous",
+  // },
   {
     name: "Science",
     value: "science",
   },
-  {
-    name: "Automobile",
-    value: "automobile",
-  },
+  // {
+  //   name: "Automobile",
+  //   value: "automobile",
+  // },
 ];
 
 // categoryNames":["politics"]

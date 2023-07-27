@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Posts from "./Posts";
 import Search from "./Search";
 import "./App.css";
+import Weather from "./weather";
 import TopStories from "./TopStories";
 import Followings from "./Followings";
 
@@ -22,7 +23,6 @@ const App = () => {
 
     let data = (apdata.data.articles);
     let newdatatosetpost = [...posts, ...data];
-
     setPosts(newdatatosetpost);
   }
 
@@ -30,16 +30,19 @@ const App = () => {
     Fetchpost();
   }, []);
 
+  // console.log("postapp", posts);
+
   return (
     <>
       <div className="main-header">
         <h1 className="title">BB News</h1>
         <Search posts={posts} setPosts={setPosts} setIsFetching={setIsFetching} />
       </div>
-      <TopStories posts={posts} setPosts={setPosts} setIsFetching={setIsFetching} />
-      <div >
+      <TopStories posts={posts} setPosts={setPosts} />
+      <Weather />
+      {/* <div >
         <Posts posts={posts}></Posts>
-      </div>
+      </div> */}
 
     </>
 
