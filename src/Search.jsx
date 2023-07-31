@@ -1,31 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { CATEGORIES } from "./constants";
-import Fetchpost from "./App.jsx"
+import Fetchpost from "./App.jsx";
+import Posts from "./Posts";
 
-const Search = ({ posts, setPosts, setIsFetching }) => {
+const Search = ({ posts }) => {
   const [input, setInput] = useState("");
   const [search, setSearch] = useState([]);
 
 
   const fetchData = async () => {
     try {
-      setIsFetching(true);
+      console.log("called");
+      // setIsFetching(true);
+      console.log("searpost", posts)
       const filteredPosts = posts?.filter((data) => {
         // console.log("tot", data.title, data.title.toLowerCase().includes(input))
         return data.title.toLowerCase().includes(input)
       }
       )
-      // console.log("filteredpost", filteredPosts);
-      setPosts(filteredPosts);
+
+      console.log("filteredpost", filteredPosts);
+      setSearch([...filteredPosts]);
+
 
 
     } catch (error) {
       console.error(error);
     } finally {
-      setIsFetching(false);
+      // setIsFetching(false);
     }
   };
+
+  useEffect(() => {
+    setSearch(posts);
+    console.log("hello search");
+    console.log("search", search);
+  }, []);
 
 
   return (
@@ -42,6 +53,7 @@ const Search = ({ posts, setPosts, setIsFetching }) => {
         >
           Search
         </button>
+        {(posts.length != 0) && <Posts posts={search} />}
       </div>
     </>
   );

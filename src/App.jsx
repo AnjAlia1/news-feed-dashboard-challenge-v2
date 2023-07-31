@@ -13,21 +13,36 @@ const App = () => {
   const [isFetching, setIsFetching] = useState(false);
 
 
-  async function Fetchpost() {
+  // async function Fetchpost() {
 
-    const rponse = await fetch('https://inshorts.me/news/all?offset=0&limit=10');
-    const apdata = await rponse.json();
-    if (!rponse.ok) {
-      throw new Error("Failed to fetch data");
-    }
+  //   const rponse = await fetch('https://inshorts.me/news/all?offset=0&limit=10');
+  //   const apdata = await rponse.json();
+  //   if (!rponse.ok) {
+  //     throw new Error("Failed to fetch data");
+  //   }
 
-    let data = (apdata.data.articles);
-    let newdatatosetpost = [...posts, ...data];
-    setPosts(newdatatosetpost);
-  }
+  //   let data = (apdata.data.articles);
+  //   let newdatatosetpost = [...posts, ...data];
+  //   setPosts(newdatatosetpost);
+  // }
 
   useEffect(() => {
+
+    async function Fetchpost() {
+
+      const rponse = await fetch('https://inshorts.me/news/all?offset=0&limit=10');
+      const apdata = await rponse.json();
+      if (!rponse.ok) {
+        throw new Error("Failed to fetch data");
+      }
+
+      let data = (apdata.data.articles);
+      console.log("data", data)
+      let newdatatosetpost = [...posts, ...data];
+      setPosts(newdatatosetpost);
+    }
     Fetchpost();
+
   }, []);
 
   // console.log("postapp", posts);
@@ -36,9 +51,11 @@ const App = () => {
     <>
       <div className="main-header">
         <h1 className="title">BB News</h1>
-        <Search posts={posts} setPosts={setPosts} setIsFetching={setIsFetching} />
+        <Search posts={posts} />
       </div>
-      <TopStories posts={posts} setPosts={setPosts} />
+      {(posts.length != 0) && <TopStories posts={posts} />}
+      {/* <Followings /> */}
+
       <Weather />
       {/* <div >
         <Posts posts={posts}></Posts>
