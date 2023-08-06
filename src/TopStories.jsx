@@ -5,13 +5,18 @@ import Posts from "./Posts";
 const TopStories = ({ posts }) => {
 
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [input, setInput] = useState("");
   const [postCategory, setPostCategory] = useState([]);
 
-  // async function updatePost() {
-  //   console.log("post", posts);
-  //   return posts;
-  // categorypost
-  // }
+  const handleSearch = () => {
+    const filteredPosts = posts?.filter((data) => {
+      return data.title.toLowerCase().includes(input)
+    }
+
+    )
+    console.log("filterposts", filteredPosts);
+    setPostCategory(filteredPosts);
+  }
 
   const handleClick = (value) => {
     setSelectedCategory(value);
@@ -20,20 +25,10 @@ const TopStories = ({ posts }) => {
     }
     else {
       let filtered_data = [...posts].filter((val) => {
-        // return val.category == value;
         return val.categoryNames == value;
       })
       setPostCategory(filtered_data);
     }
-    // const buttons = document.querySelectorAll("button");
-    // console.log(buttons);
-    // buttons.forEach((button) => {
-    //   if (button.disabled) {
-    //     button.classList.add("active");
-    //   } else {
-    //     button.classList.remove("active");
-    //   }
-    // });
   }
 
   useEffect(() => {
@@ -42,9 +37,20 @@ const TopStories = ({ posts }) => {
 
   return (
     <div>
-      {/* <h1 className="top-stories-header">Top Stories for you</h1> */}
+      <div className="search-input">
+        <input
+          className="text-input"
+          value={input}
+          onChange={(e) => setInput(e.target.value.toLowerCase())}
+        ></input>
+        <button
+          className="button"
+          onClick={() => handleSearch()}
+        >
+          Search
+        </button>
+      </div>
       {CATEGORIES.map((category) => {
-
         return (
           <button value={category.value} className="categories-button" key={category.value} disabled={selectedCategory === category.value}
             onClick={(e) => handleClick(e.target.value)}
@@ -56,45 +62,11 @@ const TopStories = ({ posts }) => {
 
       <div className="posts">
         {(posts.length != 0) && <Posts posts={postCategory} />}
-        {/* {selectedCategory == "all" ? <Posts posts={posts} setPosts={setPosts} selectedCategory={selectedCategory} /> : <>
-          {console.log("posts", posts)} */}
-        {/* {setPosts(posts.filter((post) => post.categoryNames == selectedCategory))} */}
-        {/* {setPostCategory(() => posts)} */}
-        {/* {console.log("postafterset", posts)} */}
-        {/* <Posts posts={posts} setPosts={setPosts} selectedCategory={selectedCategory} /> */}
-        {/* </> */}
-        {/* } */}
       </div>
-
-
-      {/* {(posts.length == 0) ? <p>no data</p> : < Posts posts={posts} setPostCategory={setPostCategory} selectedCategory={selectedCategory} />} */}
     </div >
   );
 }
 
-
-
 export default TopStories;
 
-
-
-{/* {console.log(selectedCategory)} */ }
-{/* {console.log("innerp", posts.map((post) => post.categoryNames))} */ }
-{/* {console.log("newpojjjjstbefore", postCategory)} */ }
-{/* {setPostCategory(() => posts.filter((post) => post.categoryNames == selectedCategory))}
-          {console.log("newpojjjjstafter", postCategory)} */}
-
-{/* {posts.filter((post) => post.categoryNames == selectedCategory)} */ }
-// const updateClassNames = () => {
-  //   const buttons = document.querySelectorAll("button");
-
-  //   buttons.forEach((button) => {
-  //     if (button.disabled) {
-  //       button.classList.add("active");
-  //     } else {
-  //       button.classList.remove("active");
-  //     }
-  //   });
-  // };
-  //  disabled={selectedCategory === category.value}
 
