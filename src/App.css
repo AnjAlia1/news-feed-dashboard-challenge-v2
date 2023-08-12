@@ -3,43 +3,57 @@
  * {
    margin: 15px;
   font-family: 'Raleway', sans-serif;
- } 
+  
+} 
 #main-page{
   display: flex;
-  width: 85%vh;
-  border:2px solid black;
+  width: 100%vh;
+  /* border:2px solid black;
+  background-color: #150150; */
+  /* background-color:  #191919a8; */
 }
 
 img {
   width: 70%;
-  height: 210px;
+  height: 120px;
 }
 
 .weather-section {
-  /* background: url("https://media.istockphoto.com/id/1159611932/photo/white-cloud-isolated-on-black-background-black-sky-and-single-white-cloud.webp?b=1&s=170667a&w=0&k=20&c=_fuvEgEimUVAULGwga910i4b-W6gFXHfb4ug9FnMx14=") no-repeat right; */
-  /* background-size: 55px; */
-  /* background-color: white;
-  width: 300px;
-  height: 150px;
-  border-radius: 15px;
-  border-style: none;
-  box-shadow: 0px 0px 3px gray; */
-  border: 2px dashed pink;
+  background: url("https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg?size=626&ext=jpg") no-repeat right;
   margin-left: -30vh;
-  margin-top: 28vh;
+  margin-top: 25vh;
+  background-color: aliceblue;
+  max-height: 80px;
+  width: 170px;
+  margin-left: 2px;
+  box-shadow: 0px 0px 3px black;
   
 }
 
 .news-box {
-  background-color: rgba(137, 43, 226, 0.207);
+  /* background-color: rgba(137, 43, 226, 0.207); */
   max-width: 320px;
+  max-height: auto;
+  font-size: smaller;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 3px black;
+   /* background-color:  #191919a8; */
+  /* color: white;  */
+}
+p{
+  margin-top: 0;
+
 }
 
 .posts {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  /* background-color: #0B0226; */
+  /* color: white; */
 }
 
 h1 {
@@ -79,7 +93,7 @@ h1 {
   width: 100%;
   background-color: #0096FF;
   border: none;
-  color: white;
+  /* color: white; */
 }
 .followers-name{
   color:#6c757d ;

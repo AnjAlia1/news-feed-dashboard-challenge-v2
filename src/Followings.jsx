@@ -12,47 +12,14 @@ const Followings = () => {
     { id: 4, name: "Anmol Sharma", isFollowed: true },
     { id: 5, name: "Anjali Sharma", isFollowed: false },
   ];
-  const [ids, setids] = useState([0]);
+  const [ids, setids] = useState([]);
   const [isFollowed, setIsFollowed] = useState(true);
-  const setFollowlist = (val) => {
-    console.log("target", val);
-    const newvar = FollowersList[val];
-    console.log("newa", newvar);
-    setIsFollowed(false);
-    console.log(isFollowed);
-
-    // setids([...ids, ...e.target.id]);
-    // ids.map((i) => {
-    //   if (i === e.target.id) {
-    //     console.log("i", e.target);
-    //     // setFollow({e.target.id}:unfo");
-    //     // e.target.innerHTML = "Unfollow";
-    //   }
-    // });
-    // console.log(ids);
-    // ids.push(id);
-    // setids([...id]);
-
-    // FollowersList.map((fol) =>
-    //   fol.id == id ? setFollow("unfollow") : setFollow("follow")
-    // );
+  const setFollowlist = (id) => {
+    setids((prevvalue) => [...prevvalue, ...id]);
+    // setPosts((prevValue) => [...prevValue, ...filteredPosts]);
+    console.log("ids", ids);
+    if (!ids?.includes(id)) setIsFollowed((pervFollowing) => !pervFollowing);
   };
-  console.log(ids);
-
-  //   (fol) => console.log("fil", fol.id, id)
-
-  // console.log("fole", FollowersList);
-  // FollowersList.filter((cal) => {
-  //   if (cal.id == id) {
-
-  //     console.log("inc", id);
-  //   } else {
-  //     console.log("js", id);
-  //   }
-  // });
-  // const changeFollow = FollowersList.filter((val) =>
-  // return (val));
-  // // setFollow("unfollow");
 
   return FollowersList.map((followers) => {
     return (
@@ -68,7 +35,7 @@ const Followings = () => {
           onClick={(e) => setFollowlist(e.target.id)}
         >
           {/* {followers.isFollowed} */}
-          {followers.isFollowed ? "follow" : "unfollow"}
+          {isFollowed ? "follow" : "unfollow"}
         </button>
       </div>
     );

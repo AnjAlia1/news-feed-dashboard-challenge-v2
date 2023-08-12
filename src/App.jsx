@@ -44,7 +44,7 @@ const App = () => {
           <Followings />
         </div>
       </div>
-      <div className="weather-section">
+      <div>
         <Weather />
       </div>
     </div>

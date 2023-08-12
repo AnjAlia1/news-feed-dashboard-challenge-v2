@@ -14,7 +14,7 @@ const Posts = ({ posts, selectedCategory }) => {
         return (
           <div className="news-box">
             <h1 className="author-name">{val.authorName}</h1>
-            <h4 className="author-title">{val.title}</h4>
+            <h3 className="author-title">{val.title}</h3>
             <img src={val.imageUrl} className="news-img"></img>
             <div>
               <p className="author-content" value={val.hashId}>
