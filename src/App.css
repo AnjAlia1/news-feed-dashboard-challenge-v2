@@ -1,40 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,800;1,200;1,900&display=swap');
 
-* {
-  box-sizing: border-box;
-  margin: 20px;
-  /* background-color: rgb(217, 218, 223); */
+ * {
+   margin: 15px;
   font-family: 'Raleway', sans-serif;
-  font-size: large;
+ } 
+#main-page{
+  display: flex;
+  width: 85%vh;
+  border:2px solid black;
 }
 
-
 img {
-  width: 80%;
-  height: 230px;
+  width: 70%;
+  height: 210px;
 }
 
 .weather-section {
-  background: url("https://media.istockphoto.com/id/1159611932/photo/white-cloud-isolated-on-black-background-black-sky-and-single-white-cloud.webp?b=1&s=170667a&w=0&k=20&c=_fuvEgEimUVAULGwga910i4b-W6gFXHfb4ug9FnMx14=") no-repeat right;
+  /* background: url("https://media.istockphoto.com/id/1159611932/photo/white-cloud-isolated-on-black-background-black-sky-and-single-white-cloud.webp?b=1&s=170667a&w=0&k=20&c=_fuvEgEimUVAULGwga910i4b-W6gFXHfb4ug9FnMx14=") no-repeat right; */
   /* background-size: 55px; */
-  background-color: white;
+  /* background-color: white;
   width: 300px;
   height: 150px;
   border-radius: 15px;
   border-style: none;
-  box-shadow: 0px 0px 3px gray;
+  box-shadow: 0px 0px 3px gray; */
+  border: 2px dashed pink;
+  margin-left: -30vh;
+  margin-top: 28vh;
+  
 }
 
 .news-box {
   background-color: rgba(137, 43, 226, 0.207);
-  max-width: 400px;
+  max-width: 320px;
 }
 
 .posts {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
 
 }
 
@@ -44,11 +48,173 @@ h1 {
   font-size: 2rem;
 }
 
-
 .h4 {
   font-weight: 100;
   font-size: 2rem;
 }
+
+.followers-section{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  /* padding: 2px; */
+}
+.followers-box{
+  max-width: 150px;
+  max-height: 200px;
+  border: 1px dashed gray;
+  background-color: rgba(255, 255, 255, 0.845);
+  align-items: center;
+}
+.followers-img{
+  height: 80px;
+  width:80px;
+  border-radius: 50%; 
+  
+}
+.followers-id{
+  margin-top: 0;
+  width: 100%;
+  background-color: #0096FF;
+  border: none;
+  color: white;
+}
+.followers-name{
+  color:#6c757d ;
+  margin-top: 0px;
+  width: 80px;
+  border: 1px dashed yellow;
+}
+.search-result {
+  width: 100%;
+  margin: auto;
+  overflow-y: scroll;
+}
+
+.search-input {
+  /* margin: 0 0 0 200px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .text-input {
+    background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
+    background-size: 25px;
+    background-color: white;
+    width: 500px;
+    height: 40px;
+    border-radius: 15px;
+    border-style: none;
+    box-shadow: 0px 0px 3px gray;
+  }
+
+  .button {
+    background-color: #0096FF;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    border-style: none;
+    box-shadow: 0px 0px 3px gray;
+
+    /* margin-left: 10px; */
+  }
+
+}
+.active {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: blue;
+}
+
+* .categories-button {
+  background-color: white;
+  color: black;
+  width: 130px;
+  height: 40px;
+  border-radius: 50px;
+  border-style: none;
+  box-shadow: 0px 0px 3px gray;
+  margin-left: 10px;
+  /* flex-wrap: wrap; */
+}
+
+.loader {
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.active {
+  background-color: #0096FF;
+  color: white;
+}
+
+.followers-div {
+  height: auto;
+  display: flex;
+  background-color: black;
+  flex-direction: row;
+  color: white;
+  border: 1px solid blue;
+  border-radius: 3%;
+}
+
+
+
+/* .author-name {
+  font-size: large;
+  margin-bottom: 1px;
+  font-weight: 150;
+  width: 120px;
+  font-size: 320;
+  font-weight: 400;
+  width: 120px;
+  margin-left: 0;
+  background-color: aliceblue;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.author-content {
+  font-size: 420;
+  font-weight: 400;
+  width: 120px;
+  margin-left: 0;
+  background-color: aliceblue;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 0.5rem;
+  padding: 2px;
+} */
+
+/* .author-title {
+  font-weight: 120;
+  font-size: 320;
+  font-weight: 400;
+  width: 120px;
+  margin-left: 0;
+  background-color: aliceblue;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 0.5rem;
+} */
+
+/* .top-stories-header {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: black;
+  margin: 0;
+  padding: 0;
+  /* margin-left: 20px; */
+/* } */
+
+
 
 /* .main-header {
   width: 100%;
@@ -132,136 +298,3 @@ box-shadow: 0px 0px 1px gray;
 .right-section {
   border: 2px solid blue;
 } */
-
-.search-result {
-  width: 100%;
-  margin: auto;
-  overflow-y: scroll;
-}
-
-.search-input {
-  margin: 0 0 0 200px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  .text-input {
-    background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
-    background-size: 25px;
-    background-color: white;
-    width: 500px;
-    height: 40px;
-    border-radius: 15px;
-    border-style: none;
-    box-shadow: 0px 0px 3px gray;
-  }
-
-  .button {
-    background-color: #0096FF;
-    color: white;
-    width: 100px;
-    height: 40px;
-    border-radius: 50px;
-    border-style: none;
-    box-shadow: 0px 0px 3px gray;
-    margin-left: 10px;
-  }
-
-}
-
-/* .author-name {
-  font-size: large;
-  margin-bottom: 1px;
-  font-weight: 150;
-  width: 120px;
-  font-size: 320;
-  font-weight: 400;
-  width: 120px;
-  margin-left: 0;
-  background-color: aliceblue;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 900;
-  font-size: 1rem;
-}
-
-.author-content {
-  font-size: 420;
-  font-weight: 400;
-  width: 120px;
-  margin-left: 0;
-  background-color: aliceblue;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 0.5rem;
-  padding: 2px;
-} */
-
-/* .author-title {
-  font-weight: 120;
-  font-size: 320;
-  font-weight: 400;
-  width: 120px;
-  margin-left: 0;
-  background-color: aliceblue;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 0.5rem;
-} */
-
-/* .top-stories-header {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: black;
-  margin: 0;
-  padding: 0;
-  /* margin-left: 20px; */
-/* } */
-
-
-.active {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: blue;
-}
-
-* .categories-button {
-  background-color: white;
-
-  color: black;
-  width: 130px;
-  height: 40px;
-  border-radius: 50px;
-  border-style: none;
-  box-shadow: 0px 0px 3px gray;
-  margin-left: 10px;
-}
-
-.loader {
-  width: 120px;
-  height: 120px;
-  margin: auto;
-  margin-top: 100px;
-}
-
-/* p {
-  font-size: small;
-} */
-
-
-
-
-.active {
-  background-color: #0096FF;
-  color: white;
-}
-
-.followers-div {
-  height: auto;
-  display: flex;
-  background-color: black;
-  flex-direction: row;
-  color: white;
-  border: 1px solid blue;
-  border-radius: 3%;
-}

@@ -18,6 +18,7 @@ const App = () => {
 
   useEffect(() => {
     async function Fetchpost() {
+      setIsFetching(true);
       const rponse = await fetch(
         "https://inshorts.me/news/all?offset=0&limit=10"
       );
@@ -25,7 +26,6 @@ const App = () => {
       if (!rponse.ok) {
         throw new Error("Failed to fetch data");
       }
-
       let data = apdata.data.articles;
       console.log("data", data);
       let newdatatosetpost = [...posts, ...data];
@@ -35,10 +35,19 @@ const App = () => {
   }, []);
 
   return (
-    <>
-      {posts.length != 0 && <TopStories posts={posts} />}
-      <Weather />
-    </>
+    <div id="main-page">
+      <div>
+        {posts.length != 0 && (
+          <TopStories posts={posts} setIsFetching={setIsFetching} />
+        )}
+        <div className="followers-section">
+          <Followings />
+        </div>
+      </div>
+      <div className="weather-section">
+        <Weather />
+      </div>
+    </div>
   );
 };
 

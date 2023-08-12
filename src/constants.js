@@ -22,27 +22,27 @@ export const CATEGORIES = [
   {
     name: "Politics",
     value: "politics",
-  },
-  {
-    name: "Technology",
-    value: "technology",
-  },
+  }
+  // {
+  //   name: "Technology",
+  //   value: "technology",
+  // },
   // {
   //   name: "Startup",
   //   value: "startup",
   // },
-  {
-    name: "Entertainment",
-    value: "entertainment",
-  },
+  // {
+  //   name: "Entertainment",
+  //   value: "entertainment",
+  // },
   // {
   //   name: "Miscellaneous",
   //   value: "miscellaneous",
   // },
-  {
-    name: "Science",
-    value: "science",
-  },
+  // {
+  //   name: "Science",
+  //   value: "science",
+  // },
   // {
   //   name: "Automobile",
   //   value: "automobile",
