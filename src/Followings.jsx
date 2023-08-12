@@ -5,20 +5,20 @@ const Followings = () => {
   const [follow, setFollow] = useState("Folhlow");
 
   const FollowersList = [
-    { id: 0, name: "Aditya Nair", isFollowed: true },
-    { id: 1, name: "Kameshwari", isFollowed: true },
-    { id: 2, name: "Nakul Ahuja", isFollowed: true },
-    { id: 3, name: "Arnab Mukherji", isFollowed: true },
-    { id: 4, name: "Anmol Sharma", isFollowed: true },
-    { id: 5, name: "Anjali Sharma", isFollowed: false },
+    { id: 0, name: "Aditya Nair" },
+    { id: 1, name: "Kameshwari" },
+    { id: 2, name: "Nakul Ahuja" },
+    { id: 3, name: "Arnab Mukherji" },
+    { id: 4, name: "Anmol Sharma" },
+    { id: 5, name: "Anjali Sharma" },
   ];
-  const [ids, setids] = useState([]);
-  const [isFollowed, setIsFollowed] = useState(true);
+  const [isFollowed, setIsFollowed] = useState({});
+
   const setFollowlist = (id) => {
-    setids((prevvalue) => [...prevvalue, ...id]);
-    // setPosts((prevValue) => [...prevValue, ...filteredPosts]);
-    console.log("ids", ids);
-    if (!ids?.includes(id)) setIsFollowed((pervFollowing) => !pervFollowing);
+    setIsFollowed((prevFollowing) => ({
+      ...prevFollowing,
+      [id]: !prevFollowing[id],
+    }));
   };
 
   return FollowersList.map((followers) => {
@@ -34,39 +34,11 @@ const Followings = () => {
           id={followers.id}
           onClick={(e) => setFollowlist(e.target.id)}
         >
-          {/* {followers.isFollowed} */}
-          {isFollowed ? "follow" : "unfollow"}
+          {isFollowed[followers.id] ? "Unfollow" : "Follow"}
         </button>
       </div>
     );
   });
 };
-// return (<h4>hi</h4>)
-
-//   return (
-//     posts.articles &&
-//     posts.articles.map((varr) => {
-//       return (
-//         <>
-//           <img src="https://media.istockphoto.com/id/1285993433/photo/carefree-african-american-girl-in-studio.jpg?s=1024x1024&w=is&k=20&c=rAwJ7wY76mBBZtbcjQItJgX2q4JpyYJXMCM1Ih_lV94=" />
-//           <div className="followers-list">
-//             <h4>{varr.authorName}</h4>
-//             <button
-//               onClick={() => {
-//                 if (followersList.includes(varr.authorName)) {
-//                   handleFollowers(varr.authorName, "unfollow");
-//                 } else {
-//                   handleFollowers(varr.authorName, "follow");
-//                 }
-//               }}
-//             >
-//               {followersList.includes(varr.authorName) ? "Unfollow" : "Follow"}
-//             </button>
-//           </div>
-//         </>
-//       );
-//     })
-//   );
-// };
 
 export default Followings;
