@@ -21,7 +21,7 @@ img {
 .weather-section {
   background: url("https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg?size=626&ext=jpg") no-repeat right;
   margin-left: -30vh;
-  margin-top: 25vh;
+  margin-top: 5vh;
   background-color: aliceblue;
   max-height: 80px;
   width: 170px;
@@ -29,6 +29,7 @@ img {
   box-shadow: 0px 0px 3px black;
   
 }
+
 
 .news-box {
   /* background-color: rgba(137, 43, 226, 0.207); */
@@ -42,6 +43,23 @@ img {
   box-shadow: 0px 0px 3px black;
    /* background-color:  #191919a8; */
   /* color: white;  */
+}
+.right-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subscription-section{
+  border: 1px dashed blue;
+  width:200px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-evenly;
+  font-size: smaller;
+  margin-top: 10vh;
+  padding: 1rem ;
+
 }
 p{
   margin-top: 0;
@@ -87,7 +105,6 @@ h1 {
   color:#6c757d ;
   margin-top: 0px;
   width: 100px;
-  border: 1px dashed yellow;
 }
 .search-result {
   width: 100%;
@@ -106,7 +123,7 @@ h1 {
     background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
     background-size: 25px;
     background-color: white;
-    width: 500px;
+    width: 380px;
     height: 40px;
     border-radius: 15px;
     border-style: none;
@@ -121,8 +138,6 @@ h1 {
     border-radius: 50px;
     border-style: none;
     box-shadow: 0px 0px 3px gray;
-
-    /* margin-left: 10px; */
   }
 
 }

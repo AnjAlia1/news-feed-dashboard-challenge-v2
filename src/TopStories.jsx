@@ -33,8 +33,8 @@ const TopStories = ({ posts }) => {
 
   return (
     <div>
-      <h1>BB News</h1>
       <div className="search-input">
+        <h2>BB News</h2>
         <input
           className="text-input"
           value={input}

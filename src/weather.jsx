@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function Weather() {
   const [temp, setTemp] = useState(0);
+  const [subscribe, setSubscribe] = useState(true);
   const [country, setCountry] = useState("a");
 
   async function weatherstats() {
@@ -32,16 +33,18 @@ function Weather() {
   }, []);
 
   return (
-    <div>
+    <div className="right-section">
       <div className="weather-section">
         <p>{country}</p>
         <p>{temp}°F</p>
       </div>
 
-      <div>
+      <div className="subscription-section">
         <p>Subscribe to our newsletter</p>
-        <input type="text"></input>
-        <button>Subscribe</button>
+        <input type="text" placeholder="Enter your email id"></input>
+        <button onClick={() => setSubscribe(!subscribe)}>
+          {subscribe ? "Subscribe" : "Subscribed ✔️"}
+        </button>
       </div>
 
       {/* <img className="weather-img" src="https://media.istockphoto.com/id/1159611932/photo/white-cloud-isolated-on-black-background-black-sky-and-single-white-cloud.webp?b=1&s=170667a&w=0&k=20&c=_fuvEgEimUVAULGwga910i4b-W6gFXHfb4ug9FnMx14=" /> */}
