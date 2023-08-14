@@ -40,7 +40,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 0px 3px black;
+  box-shadow: 0px 0px 1px black;
    /* background-color:  #191919a8; */
   /* color: white;  */
 }
@@ -50,7 +50,7 @@ img {
   align-items: center;
 }
 .subscription-section{
-  border: 1px dashed blue;
+  box-shadow: 1px 1px 2px gray;
   width:200px;
   display: flex;
   flex-direction: column;
@@ -155,7 +155,6 @@ h1 {
   border-style: none;
   box-shadow: 0px 0px 3px gray;
   margin-left: 10px;
-  /* flex-wrap: wrap; */
 }
 
 .loader {
@@ -163,11 +162,23 @@ h1 {
   height: 120px;
   margin: auto;
   margin-top: 100px;
+  
 }
 
 .active {
   background-color: #0096FF;
   color: white;
+}
+.input-email{
+  background-color: rgba(128, 128, 128, 0.153);
+  border: none;
+  padding: 4px;
+}
+.subs-btn{
+  background-color: #0096FF;
+  border: none;
+  color: white;
+  padding: 4px;
 }
 
 .followers-div {

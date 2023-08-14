@@ -41,8 +41,12 @@ function Weather() {
 
       <div className="subscription-section">
         <p>Subscribe to our newsletter</p>
-        <input type="text" placeholder="Enter your email id"></input>
-        <button onClick={() => setSubscribe(!subscribe)}>
+        <input
+          className="input-email"
+          type="text"
+          placeholder="Enter Email"
+        ></input>
+        <button className="subs-btn" onClick={() => setSubscribe(!subscribe)}>
           {subscribe ? "Subscribe" : "Subscribed ✔️"}
         </button>
       </div>
