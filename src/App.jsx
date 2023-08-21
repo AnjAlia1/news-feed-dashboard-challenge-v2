@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import Posts from "./Posts";
 import "./App.css";
 import Weather from "./weather";
-import TopStories from "./TopStories";
+import Newscontent from "./newscontent";
 import Followings from "./Followings";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
-  const [followersList, setFollowersList] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 
   const handleSearch = (filteredPosts) => {
@@ -21,13 +20,14 @@ const App = () => {
       setIsFetching(true);
       const rponse = await fetch(
         "https://inshorts.me/news/all?offset=0&limit=10"
+        // "headers: {Access-Control-Allow-origin: *}"
       );
+
       const apdata = await rponse.json();
       if (!rponse.ok) {
         throw new Error("Failed to fetch data");
       }
       let data = apdata.data.articles;
-      console.log("data", data);
       let newdatatosetpost = [...posts, ...data];
       setPosts(newdatatosetpost);
     }
@@ -38,7 +38,7 @@ const App = () => {
     <div id="main-page">
       <div>
         {posts.length != 0 && (
-          <TopStories posts={posts} setIsFetching={setIsFetching} />
+          <Newscontent posts={posts} setIsFetching={setIsFetching} />
         )}
         <div className="followers-section">
           <Followings />

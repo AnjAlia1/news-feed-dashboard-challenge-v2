@@ -2,21 +2,28 @@ import React, { useEffect, useState } from "react";
 import { CATEGORIES } from "./constants";
 import Posts from "./Posts";
 
-const TopStories = ({ posts }) => {
+const Newscontent = ({ posts }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [input, setInput] = useState("");
   const [postCategory, setPostCategory] = useState([]);
 
   const handleSearch = () => {
-    const filteredPosts = posts?.filter((data) => {
-      return data.title.toLowerCase().includes(input);
-    });
-    console.log("filterposts", filteredPosts);
-    setPostCategory(filteredPosts);
+    if (selectedCategory === "all") {
+      const filteredPosts = posts?.filter((data) => {
+        return data.title.toLowerCase().includes(input);
+      });
+      setPostCategory(filteredPosts);
+    } else {
+      const filteredsearchposts = postCategory.filter((data) => {
+        return data.title?.toLowerCase().includes(input);
+      });
+      setPostCategory(filteredsearchposts);
+    }
   };
 
   const handleClick = (value) => {
     setSelectedCategory(value);
+
     if (value == "all") {
       setPostCategory([...posts]);
     } else {
@@ -40,7 +47,7 @@ const TopStories = ({ posts }) => {
           value={input}
           onChange={(e) => setInput(e.target.value.toLowerCase())}
         ></input>
-        <button className="button" onClick={() => handleSearch()}>
+        <button className="button" onClick={(e) => handleSearch(e)}>
           Search
         </button>
       </div>
@@ -65,4 +72,4 @@ const TopStories = ({ posts }) => {
   );
 };
 
-export default TopStories;
+export default Newscontent;
