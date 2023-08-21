@@ -20,7 +20,7 @@ const App = () => {
       setIsFetching(true);
       const rponse = await fetch(
         "https://inshorts.me/news/all?offset=0&limit=10"
-        // "headers: {Access-Control-Allow-origin: *}"
+        // { headers: { "Content-Type": "application/json" } }
       );
 
       const apdata = await rponse.json();
