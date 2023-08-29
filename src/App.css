@@ -1,14 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,800;1,200;1,900&display=swap');
 
+
 * {
   margin: 15px;
   font-family: 'Raleway', sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5; 
+}
+/* .author-name {
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+} */
+/* Headlines and titles */
+ h2, h3 {
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  /* font-size: 16px; */
+}
+h1{
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Body text */
+p {
+  font-size: 18px;
+}
+
+/* Author names or metadata */
+
+
+/* Links */
+a {
+   color: #d9534f; /* or your chosen link color */
+  text-decoration: underline;
 }
 
 #main-page {
   display: flex;
   width: 100%vh;
   background-color: snow;
+  
 }
 
 img {
@@ -16,28 +51,29 @@ img {
   height: 120px;
 }
 
-.weather-section {
-  background: url("https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg?size=626&ext=jpg") no-repeat right;
-  margin-left: -30vh;
-  margin-top: 5vh;
-  max-height: 140px;
-  width: 220px;
-  margin-left: 2px;
-  box-shadow: 0px 0px 3px black;
-
-}
 
 
 .news-box {
-  max-width: 360px;
+  max-width: 320px;
   max-height: auto;
-  font-size: smaller;
+  /* font-size: smaller; */
+  background-color: #6c757d05;
   margin: 2px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 0px 1px black;
+  /* box-shadow: 0px 0px 1px black; */
+  /* border: 2px dashed black; */
+
+
 }
+.news-box:hover{
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0px 0px 2px black;
+  /* border: 1.5px solid white; */
+}
+
 
 .right-section {
   display: flex;
@@ -45,18 +81,6 @@ img {
   align-items: center;
 }
 
-.subscription-section {
-  box-shadow: 1px 1px 2px gray;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: space-evenly;
-  font-size: smaller;
-  margin-top: 10vh;
-  padding: 1rem;
-
-}
 
 p {
   margin-top: 0;
@@ -69,37 +93,7 @@ p {
   flex-wrap: wrap;
 }
 
-h1 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 900;
-  font-size: 2rem;
-}
-
-.h4 {
-  font-weight: 100;
-  font-size: 2rem;
-}
-
-.followers-section {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
-}
-
-.followers-img {
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-
-}
-
-.followers-name {
-  color: #6c757d;
-  margin-top: 0px;
-  width: 100px;
-}
+/*css for search seaction starts*/
 
 .search-result {
   width: 100%;
@@ -112,6 +106,7 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
 
   .text-input {
     background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
@@ -133,12 +128,18 @@ h1 {
     border-style: none;
     box-shadow: 0px 0px 3px gray;
   }
+  .button:hover{
+    padding: 5px 15px;
+  border-radius: 55%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  }
 
-}
-
-.active {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: blue;
+.categories-button:hover,.active {
+  background-color: #0096FF;
+  cursor: pointer;
+  color: snow;
+  transition: 0.4s;
 }
 
 * .categories-button {
@@ -146,47 +147,56 @@ h1 {
   color: black;
   width: 130px;
   height: 40px;
-  border-radius: 50px;
+  border-radius: 40px;
   border-style: none;
   box-shadow: 0px 0px 3px gray;
   margin-left: 10px;
 }
+
+/*css for search seaction starts*/
 
 .loader {
   width: 120px;
   height: 120px;
   margin: auto;
   margin-top: 100px;
-
 }
 
-.active {
-  background-color: #0096FF;
-  color: white;
+  /* CSS for weather section starts*/
+
+.subscription-section {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-size: 12px;
+  font-size: smaller;
+  margin-top: 10vh;
+  padding: 1rem;
+
 }
 
 .input-email {
   background-color: rgba(128, 128, 128, 0.153);
   border: none;
-  padding: 4px;
+  padding: 2px 1px;
+  margin-top: 0px;
+  text-align: center;
 }
 
 .subs-btn {
   background-color: #0096FF;
   border: none;
   color: white;
-  padding: 4px;
+  padding: 2px;
+  margin-top: 0px;
 }
 
-.followers-div {
-  height: auto;
-  display: flex;
-  background-color: black;
-  flex-direction: row;
-  color: white;
-  border: 1px solid blue;
-  border-radius: 3%;
-}
+/* CSS for weather section ends*/
+
+
+
+/* CSS for creators section starts*/
 
 h4 {
   font-weight: 1600;
@@ -201,7 +211,48 @@ h4 {
 .followers-id {
   background-color: #0096FF;
   border: none;
-  margin-top: 2px;
   color: white;
-  font-weight: 500;
+}
+
+.followers-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+
+  
+}
+
+.followers-img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+
+}
+
+.followers-name {
+  color: #6c757d;
+  margin-top: 0px;
+}
+
+/* CSS for creators section end*/
+
+.weather-section {
+  background: url("https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg?size=626&ext=jpg") no-repeat right;
+  margin-left: -30vh;
+  margin-top: 5vh;
+  max-height: 140px;
+  width: 220px;
+  margin-left: 2px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.weather-section p {
+  margin-top: 0px;
+}
+.weather-section .temp p {
+  margin-top: -15px;
+  width: 100%;
 }

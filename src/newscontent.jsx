@@ -57,7 +57,7 @@ const Newscontent = ({ posts }) => {
             value={category.value}
             className="categories-button"
             key={category.value}
-            disabled={selectedCategory === category.value}
+            // disabled={selectedCategory === category.value}
             onClick={(e) => handleClick(e.target.value)}
           >
             {category.name}

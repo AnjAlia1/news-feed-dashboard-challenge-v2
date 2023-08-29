@@ -29,8 +29,10 @@ function Weather() {
     <div className="right-section">
       <div className="weather-section">
         <p>{country}</p>
-        <p>{weather}</p>
-        <p>{temp}°C</p>
+        <div className="temp">
+          <p>{weather}</p>
+          <p>{temp}°C</p>
+        </div>
       </div>
 
       <div className="subscription-section">

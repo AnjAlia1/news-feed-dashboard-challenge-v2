@@ -3,7 +3,7 @@ import Posts from "./Posts";
 import "./App.css";
 import Weather from "./weather";
 import Newscontent from "./newscontent";
-import Followings from "./Followings";
+import Followings from "./creators";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -19,7 +19,12 @@ const App = () => {
     async function Fetchpost() {
       setIsFetching(true);
       const rponse = await fetch(
-        "https://inshorts.me/news/all?offset=0&limit=10"
+        "https://inshorts.me/news/all?offset=0&limit=10",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
         // { headers: { "Content-Type": "application/json" } }
       );
 
@@ -40,6 +45,7 @@ const App = () => {
         {posts.length != 0 && (
           <Newscontent posts={posts} setIsFetching={setIsFetching} />
         )}
+        <h1>Creators you should follow</h1>
         <div className="followers-section">
           <Followings />
         </div>
